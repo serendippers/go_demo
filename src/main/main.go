@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"struct_learn"
 )
 
 func main() {
@@ -31,19 +34,58 @@ func main() {
 	//could not launch process: debugserver or lldb-server not found: install XCode's command line tools or lldb-server
 	//fmt.Println(a)
 
-	nums := []int{11, 7, 2, 15}
-	target := 9
-	res := twoSum(nums, target)
+	//nums := []int{11, 7, 2, 15}
+	//target := 9
+	//res := twoSum(nums, target)
+	//
+	//fmt.Println(res)
+	result, err := struct_learn.SearchIssues(os.Args[1:])
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%d issues:\n", result.TotalCount)
+	for _, item := range result.Items {
+		fmt.Printf("#%-5d %9.9s %.55s\n",
+			item.Number, item.User.Login, item.Title)
+	}
 
-	fmt.Println(res)
+	struct_learn.Struct_one()
 }
 
+//type Point struct {
+//	X int
+//	Y int
+//}
+//
+//type Circle struct {
+//	Point
+//	Radius int
+//	test   int
+//}
+//
+//type Wheel struct {
+//	Circle
+//	Spokes int
+//}
+//
+//func Struct_one() {
+//	var w = Wheel{
+//		Circle: Circle{Point{
+//			X: 1,
+//			Y: 2,
+//		}, 7, 1},
+//		Spokes: 0,
+//	}
+//
+//	fmt.Printf("%#v\n", w)
+//	w.Y = 10
+//
+//	fmt.Printf("%#v\n", w)
+//}
 
-
-func stack(){
+func stack() {
 
 }
-
 
 func twoSum(nums []int, target int) [2]int {
 	indices := []int{}
@@ -53,19 +95,19 @@ func twoSum(nums []int, target int) [2]int {
 	}
 
 	sort(nums, indices)
-	left := 0;
-	right := len(nums)-1
+	left := 0
+	right := len(nums) - 1
 	sum := 0
-	for left< right {
+	for left < right {
 		sum = nums[left] + nums[right]
 		if sum == target {
 			return [2]int{indices[left], indices[right]}
 		}
 		if sum < target {
-			left ++
+			left++
 		}
 		if sum > target {
-			right --
+			right--
 		}
 	}
 	return [2]int{}
@@ -139,6 +181,3 @@ func swap(nums, indices []int, i, j int) {
 	indices[j] = temp
 
 }
-
-
-
