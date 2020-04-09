@@ -22,6 +22,7 @@ func RelocateLinkedList(head *Node) {
 	right := head.Next
 
 	show(head)
+	//快慢指针，这个题边界有点难搞，痛苦😖
 	for right.Next != nil && right.Next.Next != nil {
 		mid = mid.Next
 		right = right.Next.Next
