@@ -2,15 +2,11 @@ package main
 
 import (
 	"advanced"
-	"fmt"
+	"example_5"
 )
 
 func main() {
 	//RelocateLinkedList
 	advanced.TestRelocateLinkedList()
-	fmt.Printf("%T",add )
-}
-
-func add(i,j int) int  {
-	return i+ j
+	example_5.Expand("fooaaaaaaoofsfoaofooaaaajj", example_5.Change)
 }
