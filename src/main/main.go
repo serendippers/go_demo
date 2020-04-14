@@ -2,11 +2,14 @@ package main
 
 import (
 	"advanced"
-	"example_5"
+	"fmt"
 )
 
 func main() {
 	//RelocateLinkedList
-	advanced.TestRelocateLinkedList()
-	example_5.Expand("fooaaaaaaoofsfoaofooaaaajj", example_5.Change)
+	//advanced.TestRelocateLinkedList()
+	//example_5.Expand("fooaaaaaaoofsfoaofooaaaajj", example_5.Change)
+
+	uglyNumber := advanced.UglyNumber1(8)
+	fmt.Printf("UglyNumber1 is %d\n", uglyNumber)
 }
