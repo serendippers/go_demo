@@ -19,5 +19,6 @@ func main() {
 
 	//example_6.TestDistance()
 	//example_7.Exam_1()
-	example_7.Test_7_4()
+	//example_7.Test_7_4()
+	example_7.Test_7_5()
 }

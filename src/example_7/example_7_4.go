@@ -72,7 +72,7 @@ func FToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5 / 9) }
 
 func CelsiusFlag(name string, value Celsius, usage string) *Celsius  {
 	f := celsiusFlag{value}
-	flag.CommandLine.Var(&f, name, usage)
+	//flag.CommandLine.Var(&f, name, usage)
 	return &f.Celsius
 }
 
