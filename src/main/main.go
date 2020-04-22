@@ -1,7 +1,7 @@
 package main
 
 import (
-	"example_7"
+	"example_8"
 	"time"
 )
 
@@ -21,5 +21,7 @@ func main() {
 	//example_7.Exam_1()
 	//example_7.Test_7_4()
 	//example_7.Test_7_5()
-	example_7.TestExample_7_6()
+	//example_7.TestExample_7_6()
+	//example_8.TestExample_8_1()
+	example_8.TestExample_8_2()
 }
