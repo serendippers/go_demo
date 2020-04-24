@@ -1,7 +1,8 @@
 package main
 
 import (
-	"example_8"
+	"fmt"
+	"sync"
 	"time"
 )
 
@@ -23,5 +24,24 @@ func main() {
 	//example_7.Test_7_5()
 	//example_7.TestExample_7_6()
 	//example_8.TestExample_8_1()
-	example_8.TestExample_8_2()
+	//example_8.TestExample_8_2()
+	//example_8.TestExample_8_4()
+	//example_8.TestExample_8_4_2()
+	//example_8.TestExample_8_4_4()
+
+	var wg sync.WaitGroup
+	var x, y int
+	go func() {
+		x = 1                   // A1
+		fmt.Print("y:", y, " ") // A2
+		wg.Done()
+	}()
+	go func() {
+		y = 1                   // B1
+		fmt.Print("x:", x, " ") // B2
+		wg.Done()
+	}()
+	wg.Wait()
+
+
 }
